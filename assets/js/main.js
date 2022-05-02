@@ -236,15 +236,15 @@ app.ui = {
     preloaderanimHide: null,
   },
   navMenu: function () {
-    $(document).on("click", "#nav_bar nav a,.flat-button, a.logo, .tips-logo-cont a", function (
+    $(document).on("click", "#nav_bar nav a,.flat-button, a.logo, .project-logo-cont a", function (
       e
     ) {
       e.preventDefault();
       $("body").removeClass("no-overflow");
-      if (!$(this).hasClass("active") || $(this).attr("rel") === 'tips') {
+      if (!$(this).hasClass("active") || $(this).attr("rel") === 'project') {
         if (app.ui.pageLoad($(this).attr("href"), $(this).attr("rel"))) {
 
-          if($(this).attr("rel") !== 'tips-logo') {
+          if($(this).attr("rel") !== 'project-logo') {
             $("#nav_bar nav a.active").removeClass("active");
             $(this).addClass("active");
           }
@@ -287,10 +287,10 @@ app.ui = {
       app.gallery.init();
     } else if (rel == "contact") {
       app.contact.init();
-    } else if (rel == "tips") {
-      app.tips.init();
-    } else if (rel == "tips-logo") {
-      app.tipsLogo.init();
+    } else if (rel == "project") {
+      app.project.init();
+    } else if (rel == "project-logo") {
+      app.projectLogo.init();
     }
   },
   particle: false,
@@ -448,11 +448,11 @@ if (requested != "true") {
   if ($(".container.about").size() > 0) {
     app.about.init();
   }
-  if ($(".container.tips").size() > 0) {
-    app.tips.init();
+  if ($(".container.project").size() > 0) {
+    app.project.init();
   }
-  if ($(".container.tips.logo-tips").size() > 0) {
-    app.tipsLogo.init();
+  if ($(".container.project.logo-project").size() > 0) {
+    app.projectLogo.init();
   }
   if ($(".container.text-page").size() > 0) {
     app.text.init();

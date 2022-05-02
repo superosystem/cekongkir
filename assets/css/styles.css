@@ -4669,7 +4669,7 @@
   }
   
   #nav_bar nav a:first-child+a+a+a:after {
-	content: 'TIPS'
+	content: 'PROJECT'
   }
 
   #nav_bar nav a:first-child+a+a+a+a:after {
@@ -5163,7 +5163,7 @@
 	max-height: 90%
   }
 
-  .container.tips .text-zone {
+  .container.project .text-zone {
 	position: absolute;
 	left: 10%;
 	top: 50%;
@@ -5176,31 +5176,31 @@
 	width: 85%;
   }
 
-  #tips-post-container {
+  #project-post-container {
     overflow: auto;
     max-height: 70vh;
     text-align: center;
   }
 
-  .container.tips .simplebar-scrollbar:before {
+  .container.project .simplebar-scrollbar:before {
 	background: #FFD701;
   }
 
-  .container.tips .simplebar-scrollbar.simplebar-visible:before {
+  .container.project .simplebar-scrollbar.simplebar-visible:before {
 	opacity: 1;
   }
 
-  .container.tips .tips-image {
+  .container.project .project-image {
 	  height: 50vh;
   }
-  .container.tips .tips-text {
+  .container.project .project-text {
 	max-width: 500px;
 	width: 100%;
 	padding: 10px;
 	margin: 30px auto 0 auto;
   }
 
-  .container.tips .tips-tech-logo {
+  .container.project .project-tech-logo {
     width: 100px;
 	display: inline-block;
 	cursor: pointer;	
@@ -5208,7 +5208,7 @@
 	transition-duration: 0.2s;
   }
 
-  .container.tips .inner-div-container {
+  .container.project .inner-div-container {
 	background: rgba(25,25,25, 0.5);
     padding: 0 15px 15px;
     margin: 10px auto;
@@ -5216,7 +5216,7 @@
     clear: both;
   }
 
-  .container.tips .tips-text {
+  .container.project .project-text {
     max-width: 500px;
     width: 100%;
     padding: 10px;
@@ -5224,16 +5224,16 @@
 	font-weight: bold !important;
   }
 
-  .container.tips .tips-tech-logo:hover {
+  .container.project .project-tech-logo:hover {
 	transform: scale(1.5);
   }
 
-  .container.tips .tips-logo-cont {
+  .container.project .project-logo-cont {
 	  text-align: center;
   }
   
   .container.about .text-zone h1,
-  .container.tips .text-zone h1 {
+  .container.project .text-zone h1 {
 	font-size: 53px;
 	font-family: font-file-82132;
 	color: #149414 ;
@@ -5245,7 +5245,7 @@
   }
   
   .container.about h1 .blast,
-  .container.tips h1 .blast {
+  .container.project h1 .blast {
 	will-change: transform;
 	opacity: 0;
 	-webkit-transition: all .3s ease-out;
@@ -5258,7 +5258,7 @@
   }
 
   .container.about h1 .blast:hover,
-  .container.tips h1 .blast:hover {
+  .container.project h1 .blast:hover {
 	color: #fff;
   }
 
@@ -5267,7 +5267,7 @@
   }
 
   .container.about .text-zone h1:before,
-  .container.tips .text-zone h1:before {
+  .container.project .text-zone h1:before {
 	content: '<h1>';
 	font-family: 'La Belle Aurore', cursive;
 	color: #149414 ;
@@ -5280,7 +5280,7 @@
   }
   
   .container.about .text-zone h1:after,
-  .container.tips .text-zone h1:after {
+  .container.project .text-zone h1:after {
 	content: '<h1/>';
 	font-family: 'La Belle Aurore', cursive;
 	color: #149414 ;
@@ -5294,7 +5294,7 @@
   }
   
   .container.about .text-zone p,
-  .container.tips .text-zone p {
+  .container.project .text-zone p {
 	font-size: 13px;
 	color: #fff;
 	font-family: "Open Sans", sans-serif;
@@ -5414,7 +5414,8 @@
 	-moz-transform: translateZ(100px);
 	-ms-transform: translateZ(100px);
 	transform: translateZ(100px);
-	color: #68a063;
+	
+
   }
   
   .cubespinner .face2 {
@@ -5422,7 +5423,7 @@
 	-moz-transform: rotateY(90deg) translateZ(100px);
 	-ms-transform: rotateY(90deg) translateZ(100px);
 	transform: rotateY(90deg) translateZ(100px);
-	color: #F89820;
+	
   }
   
   .cubespinner .face3 {
@@ -5430,7 +5431,7 @@
 	-moz-transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
 	-ms-transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
 	transform: rotateY(90deg) rotateX(90deg) translateZ(100px);
-	color: #474A8A;
+	
   }
   
   .cubespinner .face4 {
@@ -5438,7 +5439,7 @@
 	-moz-transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
 	-ms-transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
 	transform: rotateY(180deg) rotateZ(90deg) translateZ(100px);
-	color: #5ED4F4;
+	
   }
   
   .cubespinner .face5 {
@@ -5446,7 +5447,7 @@
 	-moz-transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
 	-ms-transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
 	transform: rotateY(-90deg) rotateZ(90deg) translateZ(100px);
-	color: #EFD81D;
+	
   }
   
   .cubespinner .face6 {
@@ -5454,7 +5455,7 @@
 	-moz-transform: rotateX(-90deg) translateZ(100px);
 	-ms-transform: rotateX(-90deg) translateZ(100px);
 	transform: rotateX(-90deg) translateZ(100px);
-	color: #0DB7ED;
+	
   }
   
   .text-page .text-zone {
