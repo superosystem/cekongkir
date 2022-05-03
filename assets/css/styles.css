@@ -6862,3 +6862,145 @@
   img[alt='www.000webhost.com'] {
 	  display: none;;
   }
+
+  .slider {
+	width: 80%;
+	top: 0;
+	bottom: 0;
+	height: 80%;
+	margin-right: 10%;
+	margin-left: 10%;
+	display: flex;
+	background-color: #151515;
+	overflow-x: auto;
+	padding-top: 10px;
+	padding: 0 20px;
+  }
+  .slide {
+	width: 100%;
+	flex-shrink: 0;
+	height: 100%;
+	margin-right:5%;
+  }
+
+  .text-terminal{
+	  font-family: monospace;
+	  font-size: 1.25em;
+	  color: #9CD9F0;
+	  line-height: 1.5em;
+  }
+
+  .bodies{
+	color: #1f1;
+  }
+
+  .line4 {
+	color: #fff;
+	-webkit-animation: type .5s 10.75s steps(20, end) forwards;
+	-moz-animation: type .5s 10.75s steps(20, end) forwards;
+	-o-animation: type .5s 10.75s steps(20, end) forwards;
+	animation: type .5s 10.75s steps(20, end) forwards;
+  }
+  
+  .cursor4 {
+	-webkit-animation: blink 1s 11.5s infinite;
+	-moz-animation: blink 1s 8.5s infinite;
+	-o-animation: blink 1s 8.5s infinite;
+	animation: blink 1s 8.5s infinite;
+  }
+  
+  @-webkit-keyframes blink {
+	0% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	90% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  
+  @-moz-keyframes blink {
+	0% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	90% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  
+  @-o-keyframes blink {
+	0% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	90% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  
+  @keyframes blink {
+	0% {
+	  opacity: 0;
+	}
+	40% {
+	  opacity: 0;
+	}
+	50% {
+	  opacity: 1;
+	}
+	90% {
+	  opacity: 1;
+	}
+	100% {
+	  opacity: 0;
+	}
+  }
+  
+  @-webkit-keyframes type {
+	to {
+	  width: 17em;
+	}
+  }
+  
+  @-moz-keyframes type {
+	to {
+	  width: 17em;
+	}
+  }
+  
+  @-o-keyframes type {
+	to {
+	  width: 17em;
+	}
+  }
+  
+  @keyframes type {
+	to {
+	  width: 17em;
+	}
+  }  
