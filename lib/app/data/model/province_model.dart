@@ -1,7 +1,3 @@
-// To parse this JSON data, do
-//
-//     final provinceModel = provinceModelFromJson(jsonString);
-
 import 'dart:convert';
 
 ProvinceModel provinceModelFromJson(String str) =>
@@ -19,9 +15,9 @@ class ProvinceModel {
   String province;
 
   factory ProvinceModel.fromJson(Map<String, dynamic> json) => ProvinceModel(
-        provinceId: json["province_id"],
-        province: json["province"],
-      );
+    provinceId: json["province_id"],
+    province: json["province"],
+  );
 
   static List<ProvinceModel> fromJsonList(List list) {
     if (list.isEmpty) return List<ProvinceModel>.empty();
@@ -30,9 +26,9 @@ class ProvinceModel {
   }
 
   Map<String, dynamic> toJson() => {
-        "province_id": provinceId,
-        "province": province,
-      };
+    "province_id": provinceId,
+    "province": province,
+  };
 
   @override
   String toString() {
