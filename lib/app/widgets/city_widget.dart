@@ -1,13 +1,14 @@
 import 'dart:convert';
 
-import 'package:cekongkir/app/data/model/city_model.dart';
-import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:get/get.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:http/http.dart' as http;
+import '../data/model/city_model.dart';
+import '../modules/home/controllers/home_controller.dart';
 
 class CityWidget extends GetView<HomeController> {
   const CityWidget({
@@ -26,10 +27,10 @@ class CityWidget extends GetView<HomeController> {
       child: DropdownSearch<CityModel>(
         dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
-          labelText:
+              labelText:
               type == "from" ? "Home City/Regency" : "Destination City/Regency",
-          hintText: "City/Regency in your province",
-        )),
+              hintText: "City/Regency in your province",
+            )),
         popupProps: const PopupProps.menu(
           showSearchBox: true,
         ),
@@ -70,10 +71,14 @@ class CityWidget extends GetView<HomeController> {
             }
           } else {
             if (type == "from") {
-              print("You are not choose any city/regency");
+              if (kDebugMode) {
+                print("You are not choose any city/regency");
+              }
               controller.homeTownId.value = 0;
             } else {
-              print("You are not choose any city/regency");
+              if (kDebugMode) {
+                print("You are not choose any city/regency");
+              }
               controller.destinationCityId.value = 0;
             }
           }

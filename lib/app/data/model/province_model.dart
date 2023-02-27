@@ -19,16 +19,16 @@ class ProvinceModel {
     province: json["province"],
   );
 
+  Map<String, dynamic> toJson() => {
+    "province_id": provinceId,
+    "province": province,
+  };
+
   static List<ProvinceModel> fromJsonList(List list) {
     if (list.isEmpty) return List<ProvinceModel>.empty();
 
     return list.map((item) => ProvinceModel.fromJson(item)).toList();
   }
-
-  Map<String, dynamic> toJson() => {
-    "province_id": provinceId,
-    "province": province,
-  };
 
   @override
   String toString() {

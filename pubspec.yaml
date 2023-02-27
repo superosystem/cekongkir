@@ -1,19 +1,18 @@
-name: cekongkir
-version: 1.0.0+1
+name: postage_checker
+version: 1.0.0
 publish_to: none
-description: Shipping Cost Checker
+description: Postage Checker
 environment: 
   sdk: '>=2.19.2 <3.0.0'
 
 dependencies: 
   cupertino_icons: ^1.0.2
-  get: 4.6.5
   http: 0.13.5
   dropdown_search: 5.0.5
+  flutter_dotenv: ^5.0.2
+  get: 4.6.5
   flutter: 
     sdk: flutter
-  flutter_dotenv: ^5.0.2
-
 
 dev_dependencies: 
   flutter_lints: ^2.0.0
@@ -23,13 +22,12 @@ dev_dependencies:
 
 flutter: 
   uses-material-design: true
-  assets:
-    - .env
+
+assets:
+  - .env
 
 flutter_icons:
   android: "launcher_icon"
   ios: true
   image_path: "assets/icon/icon.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
-
-

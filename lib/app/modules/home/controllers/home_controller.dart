@@ -1,12 +1,12 @@
-// ignore_for_file: avoid_print
-
-import 'package:cekongkir/app/data/model/courier_model.dart';
+import 'dart:convert';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'dart:convert';
+
+import '../../../data/model/courier_model.dart';
 
 class HomeController extends GetxController {
   var hiddenHometown = true.obs;
@@ -52,12 +52,12 @@ class HomeController extends GetxController {
         content: Column(
           children: couriers.costs
               .map((e) => ListTile(
-                    title: Text(e.service),
-                    subtitle: Text("Rp. ${e.cost[0].value}"),
-                    trailing: Text(couriers.code == "post"
-                        ? e.cost[0].etd
-                        : "${e.cost[0].etd} DAY"),
-                  ))
+            title: Text(e.service),
+            subtitle: Text("Rp. ${e.cost[0].value}"),
+            trailing: Text(couriers.code == "post"
+                ? e.cost[0].etd
+                : "${e.cost[0].etd} DAY"),
+          ))
               .toList(),
         ),
       );

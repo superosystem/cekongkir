@@ -21,16 +21,16 @@ class CourierModel {
     costs: List<CourierCostModel>.from(json["costs"].map((x) => CourierCostModel.fromJson(x))),
   );
 
-  static List<CourierModel> fromJsonList(List list) {
-    if (list.isEmpty) return List<CourierModel>.empty();
-    return list.map((item) => CourierModel.fromJson(item)).toList();
-  }
-
   Map<String, dynamic> toJson() => {
     "code": code,
     "name": name,
     "costs": List<dynamic>.from(costs.map((x) => x.toJson())),
   };
+
+  static List<CourierModel> fromJsonList(List list) {
+    if (list.isEmpty) return List<CourierModel>.empty();
+    return list.map((item) => CourierModel.fromJson(item)).toList();
+  }
 }
 
 class CourierCostModel {

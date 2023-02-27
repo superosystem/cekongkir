@@ -1,11 +1,11 @@
-import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
-import 'package:cekongkir/app/widgets/city_widget.dart';
-import 'package:cekongkir/app/widgets/item_weight_widget.dart';
-import 'package:cekongkir/app/widgets/province_widget.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
+import 'package:get/get.dart';
+import 'package:postage_checker/app/modules/home/controllers/home_controller.dart';
+import 'package:postage_checker/app/widgets/city_widget.dart';
+import 'package:postage_checker/app/widgets/item_weight_widget.dart';
+import 'package:postage_checker/app/widgets/province_widget.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -29,8 +29,8 @@ class HomeView extends GetView<HomeController> {
             ),
             const ProvinceWidget(type: "destination"),
             Obx(() => controller.hiddenHometown.isTrue
-                  ? const SizedBox()
-                  : CityWidget(provinceId: controller.destinationProvinceId.value, type: "destination"),
+                ? const SizedBox()
+                : CityWidget(provinceId: controller.destinationProvinceId.value, type: "destination"),
             ),
             const ItemWeightWidget(),
             Padding(
@@ -73,14 +73,14 @@ class HomeView extends GetView<HomeController> {
               ),
             ),
             Obx(() => controller.hiddenButton.isTrue
-                  ? const SizedBox()
-                  : ElevatedButton(
-                onPressed: () => controller.costSender(),
-                style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 20), backgroundColor: Colors.red[900],
-                ),
-                child: const Text("CHECK SHIPPING COST"),
+                ? const SizedBox()
+                : ElevatedButton(
+              onPressed: () => controller.costSender(),
+              style: ElevatedButton.styleFrom(
+                padding: const EdgeInsets.symmetric(vertical: 20), backgroundColor: Colors.red[900],
               ),
+              child: const Text("CHECK SHIPPING COST"),
+            ),
             ),
           ],
         ),

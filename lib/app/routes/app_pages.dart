@@ -1,6 +1,9 @@
-import 'package:cekongkir/app/modules/home/binding/home_binding.dart';
-import 'package:cekongkir/app/modules/home/views/HomeView.dart';
 import 'package:get/get.dart';
+
+import '../modules/home/bindings/home_binding.dart';
+import '../modules/home/views/home_view.dart';
+
+part 'app_routes.dart';
 
 class AppPages {
   AppPages._();
@@ -14,14 +17,4 @@ class AppPages {
       binding: HomeBinding(),
     ),
   ];
-}
-
-abstract class Routes {
-  Routes._();
-
-  static const HOME = _Paths.HOME;
-}
-
-abstract class _Paths {
-  static const HOME = '/home';
 }

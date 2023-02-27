@@ -1,7 +1,8 @@
-import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
+
+import 'package:dropdown_search/dropdown_search.dart';
 import 'package:get/get.dart';
+import '../modules/home/controllers/home_controller.dart';
 
 class ItemWeightWidget extends GetView<HomeController> {
   const ItemWeightWidget({Key? key}) : super(key: key);

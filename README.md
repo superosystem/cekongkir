@@ -1,6 +1,6 @@
-# cekongkir
+# postage_checker
 
-Shipping Cost Checker
+Postage Checker
 
 ## Getting Started
 

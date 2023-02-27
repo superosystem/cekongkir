@@ -1,13 +1,14 @@
 import 'dart:convert';
 
-import 'package:cekongkir/app/data/model/province_model.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
+
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+import 'package:dropdown_search/dropdown_search.dart';
+import '../data/model/province_model.dart';
+import '../modules/home/controllers/home_controller.dart';
 
 class ProvinceWidget extends GetView<HomeController> {
   const ProvinceWidget({
@@ -24,9 +25,9 @@ class ProvinceWidget extends GetView<HomeController> {
       child: DropdownSearch<ProvinceModel>(
         dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
-          labelText: type == "from" ? "Home Province" : "Destination Province",
-          hintText: "Province in your country",
-        )),
+              labelText: type == "from" ? "Home Province" : "Destination Province",
+              hintText: "Province in your country",
+            )),
         popupProps: const PopupProps.menu(
           showSearchBox: true,
         ),

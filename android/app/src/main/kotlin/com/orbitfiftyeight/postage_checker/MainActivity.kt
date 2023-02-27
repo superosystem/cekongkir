@@ -1,4 +1,4 @@
-package com.gusrylmubarok.cekongkir.cekongkir
+package com.orbitfiftyeight.postage_checker
 
 import io.flutter.embedding.android.FlutterActivity
 
