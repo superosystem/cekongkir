@@ -2,11 +2,11 @@ import 'dart:convert';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:get/get.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:http/http.dart' as http;
+import '../../environment.dart';
 import '../data/model/city_model.dart';
 import '../modules/home/controllers/home_controller.dart';
 
@@ -42,7 +42,7 @@ class CityWidget extends GetView<HomeController> {
             final response = await http.get(
               url,
               headers: {
-                "key": dotenv.get('BACKEND_API_KEY'),
+                "key": Environment.backendApi,
               },
             );
             var data = json.decode(response.body) as Map<String, dynamic>;

@@ -2,10 +2,10 @@ import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import 'package:postage_checker/app/modules/home/controllers/home_controller.dart';
-import 'package:postage_checker/app/widgets/city_widget.dart';
-import 'package:postage_checker/app/widgets/item_weight_widget.dart';
-import 'package:postage_checker/app/widgets/province_widget.dart';
+import '../controllers/home_controller.dart';
+import '../../../widgets/city_widget.dart';
+import '../../../widgets/item_weight_widget.dart';
+import '../../../widgets/province_widget.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -14,7 +14,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Shipping Cost Checker'),
+        title: const Text('Postage Checker'),
         centerTitle: true,
         backgroundColor: Colors.red[900],
       ),
@@ -79,7 +79,7 @@ class HomeView extends GetView<HomeController> {
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 20), backgroundColor: Colors.red[900],
               ),
-              child: const Text("CHECK SHIPPING COST"),
+              child: const Text("CHECK POSTAGE COST"),
             ),
             ),
           ],

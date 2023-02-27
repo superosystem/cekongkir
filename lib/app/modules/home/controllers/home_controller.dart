@@ -1,11 +1,10 @@
 import 'dart:convert';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_dotenv/flutter_dotenv.dart';
 
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
 
+import '../../../../environment.dart';
 import '../../../data/model/courier_model.dart';
 
 class HomeController extends GetxController {
@@ -36,7 +35,7 @@ class HomeController extends GetxController {
           "courier": "$courier",
         },
         headers: {
-          "key": dotenv.get('BACKEND_API_KEY'),
+          "key": Environment.backendApi,
           "content-type": "application/x-www-form-urlencoded",
         },
       );
@@ -62,9 +61,7 @@ class HomeController extends GetxController {
         ),
       );
     } catch (err) {
-      if (kDebugMode) {
         print(err);
-      }
       Get.defaultDialog(
         title: "Problem occur",
         middleText: err.toString(),
@@ -73,10 +70,7 @@ class HomeController extends GetxController {
   }
 
   void showButton() {
-    if (homeTownId != 0 &&
-        destinationCityId != 0 &&
-        itemWeight > 0 &&
-        courier != "") {
+    if (homeTownId != 0 && destinationCityId != 0 && itemWeight > 0 && courier != "") {
       hiddenButton.value = false;
     } else {
       hiddenButton.value = true;
@@ -85,8 +79,8 @@ class HomeController extends GetxController {
 
   void changeWeight(String value) {
     itemWeight = double.tryParse(value) ?? 0.0;
-    String cekSatuan = itemUnit;
-    switch (cekSatuan) {
+    String checkUnit = itemUnit;
+    switch (checkUnit) {
       case "ton":
         itemWeight = itemWeight * 1000000;
         break;
