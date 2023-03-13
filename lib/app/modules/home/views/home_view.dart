@@ -1,11 +1,11 @@
+import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
+import 'package:cekongkir/app/widgets/city_widget.dart';
+import 'package:cekongkir/app/widgets/item_weight_widget.dart';
+import 'package:cekongkir/app/widgets/province_widget.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
-import '../controllers/home_controller.dart';
-import '../../../widgets/city_widget.dart';
-import '../../../widgets/item_weight_widget.dart';
-import '../../../widgets/province_widget.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});
@@ -14,7 +14,7 @@ class HomeView extends GetView<HomeController> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Postage Checker'),
+        title: const Text('Cek Ongkir'),
         centerTitle: true,
         backgroundColor: Colors.red[900],
       ),
@@ -41,8 +41,8 @@ class HomeView extends GetView<HomeController> {
                 ),
                 dropdownDecoratorProps: const DropDownDecoratorProps(
                   dropdownSearchDecoration: InputDecoration(
-                    labelText: "Courier Name",
-                    hintText: "Choose your courier",
+                    labelText: "Pilih kurir",
+                    hintText: "Pilih kurir kamu",
                     border: OutlineInputBorder(),
                   ),
                 ),
@@ -79,7 +79,7 @@ class HomeView extends GetView<HomeController> {
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 20), backgroundColor: Colors.red[900],
               ),
-              child: const Text("CHECK POSTAGE COST"),
+              child: const Text("Cek Ongkirnya"),
             ),
             ),
           ],

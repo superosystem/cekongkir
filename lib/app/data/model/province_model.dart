@@ -1,7 +1,6 @@
 import 'dart:convert';
 
-ProvinceModel provinceModelFromJson(String str) =>
-    ProvinceModel.fromJson(json.decode(str));
+ProvinceModel provinceModelFromJson(String str) => ProvinceModel.fromJson(json.decode(str));
 
 String provinceModelToJson(ProvinceModel data) => json.encode(data.toJson());
 

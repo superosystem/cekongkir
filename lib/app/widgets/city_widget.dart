@@ -1,14 +1,13 @@
 import 'dart:convert';
 
+import 'package:dropdown_search/dropdown_search.dart';
+import 'package:cekongkir/app/data/model/city_model.dart';
+import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
+import 'package:cekongkir/app/utils/dotenv_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
-import 'package:dropdown_search/dropdown_search.dart';
 import 'package:http/http.dart' as http;
-import '../../environment.dart';
-import '../data/model/city_model.dart';
-import '../modules/home/controllers/home_controller.dart';
 
 class CityWidget extends GetView<HomeController> {
   const CityWidget({
@@ -28,8 +27,8 @@ class CityWidget extends GetView<HomeController> {
         dropdownDecoratorProps: DropDownDecoratorProps(
             dropdownSearchDecoration: InputDecoration(
               labelText:
-              type == "from" ? "Home City/Regency" : "Destination City/Regency",
-              hintText: "City/Regency in your province",
+              type == "from" ? "Kota Asal" : "Kota Tujuan",
+              hintText: "Kota Asal Pengiriman",
             )),
         popupProps: const PopupProps.menu(
           showSearchBox: true,
@@ -42,7 +41,7 @@ class CityWidget extends GetView<HomeController> {
             final response = await http.get(
               url,
               headers: {
-                "key": Environment.backendApi,
+                "key": DotEnvUtil.backendApi,
               },
             );
             var data = json.decode(response.body) as Map<String, dynamic>;
@@ -72,12 +71,12 @@ class CityWidget extends GetView<HomeController> {
           } else {
             if (type == "from") {
               if (kDebugMode) {
-                print("You are not choose any city/regency");
+                print("Kamu belum memilih kota");
               }
               controller.homeTownId.value = 0;
             } else {
               if (kDebugMode) {
-                print("You are not choose any city/regency");
+                print("Kamu belum memilih kota");
               }
               controller.destinationCityId.value = 0;
             }

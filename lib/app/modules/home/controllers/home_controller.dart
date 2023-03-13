@@ -1,11 +1,11 @@
 import 'dart:convert';
-import 'package:flutter/material.dart';
 
+import 'package:cekongkir/app/data/model/courier_model.dart';
+import 'package:cekongkir/app/utils/dotenv_utils.dart';
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
-
-import '../../../../environment.dart';
-import '../../../data/model/courier_model.dart';
 
 class HomeController extends GetxController {
   var hiddenHometown = true.obs;
@@ -35,7 +35,7 @@ class HomeController extends GetxController {
           "courier": "$courier",
         },
         headers: {
-          "key": Environment.backendApi,
+          "key": DotEnvUtil.backendApi,
           "content-type": "application/x-www-form-urlencoded",
         },
       );
@@ -61,7 +61,9 @@ class HomeController extends GetxController {
         ),
       );
     } catch (err) {
+      if (kDebugMode) {
         print(err);
+      }
       Get.defaultDialog(
         title: "Problem occur",
         middleText: err.toString(),
@@ -81,88 +83,30 @@ class HomeController extends GetxController {
     itemWeight = double.tryParse(value) ?? 0.0;
     String checkUnit = itemUnit;
     switch (checkUnit) {
-      case "ton":
-        itemWeight = itemWeight * 1000000;
-        break;
-      case "kwintal":
-        itemWeight = itemWeight * 100000;
-        break;
-      case "ons":
-        itemWeight = itemWeight * 100;
-        break;
-      case "lbs":
-        itemWeight = itemWeight * 2204.62;
-        break;
-      case "pound":
-        itemWeight = itemWeight * 2204.62;
-        break;
       case "kg":
         itemWeight = itemWeight * 1000;
         break;
-      case "hg":
-        itemWeight = itemWeight * 100;
-        break;
-      case "dag":
-        itemWeight = itemWeight * 10;
-        break;
       case "gram":
         itemWeight = itemWeight;
-        break;
-      case "dg":
-        itemWeight = itemWeight / 10;
-        break;
-      case "cg":
-        itemWeight = itemWeight / 100;
-        break;
-      case "mg":
-        itemWeight = itemWeight / 1000;
         break;
       default:
         itemWeight = itemWeight;
     }
 
-    print("$itemWeight gram");
+    if (kDebugMode) {
+      print("$itemWeight gram");
+    }
     showButton();
   }
 
   void changeUnit(String value) {
     itemWeight = double.tryParse(weightCalc.text) ?? 0.0;
     switch (value) {
-      case "ton":
-        itemWeight = itemWeight * 1000000;
-        break;
-      case "kwintal":
-        itemWeight = itemWeight * 100000;
-        break;
-      case "ons":
-        itemWeight = itemWeight * 100;
-        break;
-      case "lbs":
-        itemWeight = itemWeight * 2204.62;
-        break;
-      case "pound":
-        itemWeight = itemWeight * 2204.62;
-        break;
       case "kg":
         itemWeight = itemWeight * 1000;
         break;
-      case "hg":
-        itemWeight = itemWeight * 100;
-        break;
-      case "dag":
-        itemWeight = itemWeight * 10;
-        break;
       case "gram":
         itemWeight = itemWeight;
-        break;
-      case "dg":
-        itemWeight = itemWeight / 10;
-        break;
-      case "cg":
-        itemWeight = itemWeight / 100;
-        break;
-      case "mg":
-        itemWeight = itemWeight / 1000;
         break;
       default:
         itemWeight = itemWeight;
@@ -170,7 +114,9 @@ class HomeController extends GetxController {
 
     itemUnit = value;
 
-    print("$itemWeight gram");
+    if (kDebugMode) {
+      print("$itemWeight gram");
+    }
     showButton();
   }
 
