@@ -43,6 +43,6 @@ app.*.map.json
 /android/app/profile
 /android/app/release
 
-# Environment
-*.env.development
-*.env.production
+# dotenv
+.env.production
+.env.development

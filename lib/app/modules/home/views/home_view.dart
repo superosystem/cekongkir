@@ -1,11 +1,12 @@
-import 'package:cekongkir/app/modules/home/controllers/home_controller.dart';
-import 'package:cekongkir/app/widgets/city_widget.dart';
-import 'package:cekongkir/app/widgets/item_weight_widget.dart';
-import 'package:cekongkir/app/widgets/province_widget.dart';
 import 'package:dropdown_search/dropdown_search.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+
+import '../../../widgets/city.dart';
+import '../../../widgets/item_weight.dart';
+import '../../../widgets/province.dart';
+import '../controllers/home_controller.dart';
 
 class HomeView extends GetView<HomeController> {
   const HomeView({super.key});

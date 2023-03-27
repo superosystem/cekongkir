@@ -1,11 +1,12 @@
 import 'dart:convert';
 
-import 'package:cekongkir/app/data/model/courier_model.dart';
-import 'package:cekongkir/app/utils/dotenv_utils.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:http/http.dart' as http;
+
+import '../../../data/model/courier.dart';
+import '../../../utils/dotenv.dart';
 
 class HomeController extends GetxController {
   var hiddenHometown = true.obs;
@@ -51,12 +52,12 @@ class HomeController extends GetxController {
         content: Column(
           children: couriers.costs
               .map((e) => ListTile(
-            title: Text(e.service),
-            subtitle: Text("Rp. ${e.cost[0].value}"),
-            trailing: Text(couriers.code == "post"
-                ? e.cost[0].etd
-                : "${e.cost[0].etd} DAY"),
-          ))
+                    title: Text(e.service),
+                    subtitle: Text("Rp. ${e.cost[0].value}"),
+                    trailing: Text(couriers.code == "post"
+                        ? e.cost[0].etd
+                        : "${e.cost[0].etd} DAY"),
+                  ))
               .toList(),
         ),
       );
@@ -72,7 +73,10 @@ class HomeController extends GetxController {
   }
 
   void showButton() {
-    if (homeTownId != 0 && destinationCityId != 0 && itemWeight > 0 && courier != "") {
+    if (homeTownId != 0 &&
+        destinationCityId != 0 &&
+        itemWeight > 0 &&
+        courier != "") {
       hiddenButton.value = false;
     } else {
       hiddenButton.value = true;
